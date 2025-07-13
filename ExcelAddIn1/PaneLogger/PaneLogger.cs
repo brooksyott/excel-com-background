@@ -44,7 +44,7 @@ namespace Logger
             if (logLevel < Level)
                 return;
 
-            listBoxLog.Items.Add($"{DateTime.Now.ToString("HH:mm:ss.fff")} [{logLevel.ToString()}] - {message}");
+            listBoxLog.Items.Add($"{DateTime.Now.ToString("HH:mm:ss.fff")}\t[{logLevel.ToString()}]\t{message}");
         }
 
         public void LogInfo(string message)
