@@ -29,7 +29,7 @@ namespace ExcelAddIn1
             logger = new PaneLogger();
 
             customTaskPane = this.CustomTaskPanes.Add(logger, "Logging");
-            customTaskPane.Visible = true;
+            customTaskPane.Visible = PaneLogger.Level == PaneLogger.LogLevel.None ? false : true;
         }
 
         public void ShowProgressPane()

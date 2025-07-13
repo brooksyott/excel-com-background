@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -8,11 +9,11 @@ namespace Logger
     {
         public enum LogLevel
         {
-            None = 0,
-            Debug,
+            Debug = 0,
             Info,
             Warning,
-            Error
+            Error,
+            None
         }
 
         static public LogLevel Level = LogLevel.Info;
@@ -65,6 +66,21 @@ namespace Logger
         public void LogError(string message)
         {
             Log(LogLevel.Error, message);
+        }
+
+
+        private void labelStatus_Click(object sender, EventArgs e)
+        {
+            if (listBoxLog.Items.Count > 0)
+            {
+                var allText = new StringBuilder();
+
+                foreach (var item in listBoxLog.Items)
+                {
+                    allText.AppendLine(item.ToString());
+                }
+                Clipboard.SetText(allText.ToString());
+            }
         }
     }
 }

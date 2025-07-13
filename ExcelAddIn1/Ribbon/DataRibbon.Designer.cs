@@ -34,15 +34,15 @@ namespace ExcelAddIn1.Ribbon
 
             this.ddLogLevel.Label = "Log Level";
             this.ddLogLevel.Items.Add(this.Factory.CreateRibbonDropDownItem());
-            this.ddLogLevel.Items[0].Label = "None";
+            this.ddLogLevel.Items[0].Label = "Debug";
             this.ddLogLevel.Items.Add(this.Factory.CreateRibbonDropDownItem());
-            this.ddLogLevel.Items[1].Label = "Debug";
+            this.ddLogLevel.Items[1].Label = "Info";
             this.ddLogLevel.Items.Add(this.Factory.CreateRibbonDropDownItem());
-            this.ddLogLevel.Items[2].Label = "Info";
+            this.ddLogLevel.Items[2].Label = "Warning";
             this.ddLogLevel.Items.Add(this.Factory.CreateRibbonDropDownItem());
-            this.ddLogLevel.Items[3].Label = "Warning";
+            this.ddLogLevel.Items[3].Label = "Error";
             this.ddLogLevel.Items.Add(this.Factory.CreateRibbonDropDownItem());
-            this.ddLogLevel.Items[4].Label = "Error";
+            this.ddLogLevel.Items[4].Label = "None";
             this.ddLogLevel.SelectionChanged += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ddLogLevel_SelectionChanged);
             this.ddLogLevel.SelectedItemIndex = (int)PaneLogger.Level;
 
